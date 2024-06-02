@@ -1,19 +1,19 @@
-local httpService = game:GetService('HttpService')
-local ThemeManager = {} do
-	ThemeManager.Folder = 'LinoriaLibSettings'
-	-- if not isfolder(ThemeManager.Folder) then makefolder(ThemeManager.Folder) end
-	ThemeManager.Library = nil
-	ThemeManager.BuiltInThemes = {
+ local httpService = game:GetService('HttpService')
+ local ThemeManager = {} do
+ ThemeManager.Folder = 'LinoriaLibSettings'
+ -- if not isfolder(ThemeManager.Folder) then makefolder(ThemeManager.Folder) end
+ ThemeManager.Library = nil
+ ThemeManager.BuiltInThemes = {
     ['Mae.lua'] = { 1, httpService:JSONDecode('{"FontColor":"c5c5c5","MainColor":"0F0F0F","AccentColor":"ffc6fe","SelectedTabColor":"171717","BackgroundColor":"0f0f0f","OutlineColor":"191919"}') },
-		['GameSense'] = { 2, httpService:JSONDecode('{"FontColor":"919191","MainColor":"101010","AccentColor":"9CB819","SelectedTabColor":"101010","BackgroundColor":"111111","OutlineColor":"2D2D2D"}') },
-		['Nekocheat Pink'] = { 3, httpService:JSONDecode('{"MainColor":"0f0f0f","AccentColor":"e21e70","OutlineColor":"202020","BackgroundColor":"121212","FontColor":"c1c1c1"}') },
+    ['GameSense'] = { 2, httpService:JSONDecode('{"FontColor":"919191","MainColor":"101010","AccentColor":"9CB819","SelectedTabColor":"101010","BackgroundColor":"111111","OutlineColor":"2D2D2D"}') },
+    ['Nekocheat Pink'] = { 3, httpService:JSONDecode('{"MainColor":"0f0f0f","AccentColor":"e21e70","OutlineColor":"202020","BackgroundColor":"121212","FontColor":"c1c1c1"}') },
     ['Nekocheat Blue'] = { 4, httpService:JSONDecode('{"MainColor":"0f0f0f","AccentColor":"00f7ff","OutlineColor":"202020","BackgroundColor":"121212","FontColor":"c1c1c1"}') },
     ['Fatality Shit'] = { 5, httpService:JSONDecode('{"MainColor":"191335","AccentColor":"c50753","OutlineColor":"3c355d","BackgroundColor":"191335","FontColor":"c1c1c1"}') },
     ['Spooky'] = { 6, httpService:JSONDecode('{"MainColor":"0f0f0f","AccentColor":"a84405","OutlineColor":"191919","BackgroundColor":"0f0f0f","FontColor":"c5c5c5"}') },
     ['Comet.pub'] = { 7, httpService:JSONDecode('{"FontColor":"5E5E5E","MainColor":"0F0F0F","AccentColor":"5D589D","SelectedTabColor":"1a191d","BackgroundColor":"0F0F0F","OutlineColor":"191919"}') },
-		['Pandahook.cc'] = { 8, httpService:JSONDecode('{"FontColor":"AEAEAE","MainColor":"0F0F0F","AccentColor":"30406A","SelectedTabColor":"151515","BackgroundColor":"0F0F0F","OutlineColor":"171717"}') },
+    ['Pandahook.cc'] = { 8, httpService:JSONDecode('{"FontColor":"AEAEAE","MainColor":"0F0F0F","AccentColor":"30406A","SelectedTabColor":"151515","BackgroundColor":"0F0F0F","OutlineColor":"171717"}') },
 	}
-	function ThemeManager:ApplyTheme(theme)
+  function ThemeManager:ApplyTheme(theme)
 		local customThemeData = self:GetCustomTheme(theme)
 		local data = customThemeData or self.BuiltInThemes[theme]
 		if not data then return end
